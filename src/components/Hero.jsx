@@ -9,7 +9,7 @@ const Hero = () => {
     return (
       <section
         id="inicio"
-        className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 to-accent-50"
+        className="relative min-h-screen flex items-center bg-linear-to-br from-primary-50 to-accent-50"
       >
         <div className="section-container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
@@ -111,9 +111,9 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative lg:order-2"
             >
-              <div className="relative aspect-[3/4] max-w-md mx-auto">
+              <div className="relative aspect-3/4 max-w-md mx-auto">
                 {/* Placeholder para la foto de Marina */}
-                <div className="w-full h-full bg-gradient-to-br from-accent-100 via-white to-accent-50 rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
+                <div className="w-full h-full bg-linear-to-br from-accent-100 via-white to-accent-50 rounded-3xl shadow-2xl overflow-hidden border-4 border-white">
                   <img
                     src={marinaHero}
                     alt="Marina Vera Guzmán - Psicóloga Clínica especializada en terapia sistémica y transgeneracional"
@@ -131,10 +131,10 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
-                className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 lg:-left-8 lg:bottom-12 bg-white px-6 py-4 rounded-2xl shadow-xl border border-accent-100 max-w-xs"
+                className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:translate-x-0 lg:-left-8 lg:bottom-12 bg-white px-6 py-4 rounded-2xl shadow-xl border border-accent-100 max-w-xs"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 rounded-xl bg-linear-to-br from-accent-400 to-accent-600 flex items-center justify-center shrink-0">
                     <span className="text-2xl">✨</span>
                   </div>
                   <div>

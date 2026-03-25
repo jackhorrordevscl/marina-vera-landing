@@ -8,7 +8,7 @@ const Contact = () => {
       description: "Reserva tu hora de atención online o presencial",
       url:
         import.meta.env.VITE_FORM_AGENDAR ||
-        "https://docs.google.com/forms/d/1k4wEk5umYGPSpBzkm7CFkbZJFjzBmt1oFc6xmJ-zKYc/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLScilz-ybuMX2PUvhZB2sThEVbSmVEFUzCjUfr4lgMqcvs8X-g/viewform?pli=1",
       icon: Calendar,
       color: "from-blue-500 to-blue-600",
     },
@@ -17,7 +17,7 @@ const Contact = () => {
       description: "Envía tus dudas o consultas sobre los servicios",
       url:
         import.meta.env.VITE_FORM_CONSULTA ||
-        "https://docs.google.com/forms/d/1qiyvipQrjFyWfzfhGQfyH44FDxd6Dc5q9T5GqYmInTM/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLScilz-ybuMX2PUvhZB2sThEVbSmVEFUzCjUfr4lgMqcvs8X-g/viewform?pli=1",
       icon: MessageSquare,
       color: "from-green-500 to-green-600",
     },
@@ -26,7 +26,7 @@ const Contact = () => {
       description: "Formulario adicional para casos específicos",
       url:
         import.meta.env.VITE_FORM_OTRO ||
-        "https://docs.google.com/forms/d/1P4lZnW4vXlnVo6KA6bGpQvxlkgQs5XES8FrQwo0Yu2k/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLScilz-ybuMX2PUvhZB2sThEVbSmVEFUzCjUfr4lgMqcvs8X-g/viewform?pli=1",
       icon: Mail,
       color: "from-purple-500 to-purple-600",
     },
@@ -88,13 +88,13 @@ const Contact = () => {
             >
               {/* Gradient background on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${form.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-linear-to-br ${form.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
               />
 
               <div className="relative z-10">
                 {/* Icon */}
                 <div
-                  className={`w-14 h-14 rounded-xl bg-gradient-to-br ${form.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-14 h-14 rounded-xl bg-linear-to-br ${form.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
                 >
                   <Icon className="w-7 h-7 text-white" />
                 </div>
@@ -126,14 +126,14 @@ const Contact = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.4 }}
-        className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8 md:p-12 mb-12"
+        className="bg-linear-to-br from-primary-50 to-accent-50 rounded-2xl p-8 md:p-12 mb-12"
       >
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
             return (
               <div key={index} className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center">
+                <div className="shrink-0 w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center">
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -171,7 +171,7 @@ const Contact = () => {
             Enviar WhatsApp
           </a>
           <p className="text-xs text-gray-500 mt-3">
-            (Reemplazar número con el WhatsApp real de Marina)
+            +56 9 3706 2554
           </p>
         </div>
       </motion.div>

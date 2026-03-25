@@ -26,7 +26,7 @@ const Hero = () => {
                 transition={{ delay: 0.2 }}
                 className="badge badge-primary inline-block"
               >
-                Registro SIS N° 829354
+                Registro SIS N° 829352
               </motion.span>
 
               <motion.h1

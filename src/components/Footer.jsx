@@ -210,7 +210,7 @@ const Footer = () => {
                 rol de profesional tratante.
               </p>
               <p className="text-accent-400 font-medium">
-                Registro Superintendencia de Salud: SIS N° 829352
+                Registro Superintendencia de Salud: SIS N° 829352 
               </p>
             </div>
           </div>

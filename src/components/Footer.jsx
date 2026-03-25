@@ -132,7 +132,7 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
                 <a
-                  href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
+                  href={`"https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}"`}
                   className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
                 >
                   +{import.meta.env.VITE_WHATSAPP_NUMBER || "56 9 1234 5678"}

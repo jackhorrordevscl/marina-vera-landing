@@ -83,12 +83,12 @@ const Hero = () => {
                 transition={{ delay: 0.8 }}
                 className="grid grid-cols-3 gap-8 pt-8 border-t border-accent-200"
               >
-                <div className="text-center lg:text-left">
+                {/* <div className="text-center lg:text-left">
                   <div className="text-4xl font-bold gradient-text">+5</div>
                   <div className="text-sm text-gray-600 mt-1">
                     Años de experiencia
                   </div>
-                </div>
+                </div> */}
                 <div className="text-center lg:text-left">
                   <div className="text-4xl font-bold gradient-text">100%</div>
                   <div className="text-sm text-gray-600 mt-1">

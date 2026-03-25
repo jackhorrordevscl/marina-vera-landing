@@ -72,7 +72,7 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-serif font-bold bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent mb-4">
+              <h3 className="text-2xl font-serif font-bold bg-linear-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent mb-4">
                 Marina Vera Guzmán
               </h3>
               <p className="text-gray-400 mb-4 max-w-md">
@@ -81,7 +81,7 @@ const Footer = () => {
                 evidencia para tu bienestar integral.
               </p>
               <div className="flex items-center gap-2 text-sm text-accent-400">
-                <span className="font-semibold">Registro SIS N° 829354</span>
+                <span className="font-semibold">Registro SIS N° 829352</span>
               </div>
             </motion.div>
           </div>
@@ -122,7 +122,7 @@ const Footer = () => {
             <h4 className="text-white font-semibold mb-4">Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 text-accent-400 flex-shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
                 <span className="text-gray-400 text-sm">
                   Teleconsulta y Atención Presencial
                   <br />
@@ -130,7 +130,7 @@ const Footer = () => {
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-5 h-5 text-accent-400 flex-shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
                 <a
                   href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
                   className="text-gray-400 hover:text-accent-400 transition-colors text-sm"
@@ -141,7 +141,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="w-5 h-5 text-accent-400 flex-shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-accent-400 shrink-0 mt-0.5" />
                 <a
                   href={`mailto:${import.meta.env.VITE_EMAIL}`}
                   className="text-gray-400 hover:text-accent-400 transition-colors text-sm"

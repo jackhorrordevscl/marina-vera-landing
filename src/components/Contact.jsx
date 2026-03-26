@@ -48,7 +48,7 @@ const Contact = () => {
   ];
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '');
-  
+
   return (
     <section id="contacto" className="section-container bg-white">
       <div className="text-center mb-16">

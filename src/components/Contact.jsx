@@ -160,7 +160,7 @@ const Contact = () => {
             ¿Prefieres una respuesta más rápida?
           </p>
           <a
-            href={`${import.meta.env.VITE_WS_LINK}`}
+            href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"

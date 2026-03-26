@@ -42,7 +42,7 @@ const About = () => {
         >
           <div className="relative">
             {/* Placeholder para segunda foto o imagen profesional */}
-            <div className="aspect-[4/5] bg-gradient-to-br from-accent-100 via-white to-accent-50 rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
+            <div className="aspect-4/5 bg-linear-to-br from-accent-100 via-white to-accent-50 rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
               <img
                 src={marinaAbout}
                 alt="Marina Vera - Espacio de consulta terapéutica con enfoque cálido y profesional"
@@ -99,10 +99,10 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="bg-gradient-to-br from-accent-50 to-primary-50 border-2 border-accent-200 rounded-2xl p-6 mb-8"
+            className="bg-linear-to-br from-accent-50 to-primary-50 border-2 border-accent-200 rounded-2xl p-6 mb-8"
           >
             <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center">
+              <div className="shrink-0 w-12 h-12 bg-accent-500 rounded-xl flex items-center justify-center">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <div>

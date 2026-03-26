@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion  } from 'framer-motion';
 import { Brain, FileText, Sparkles, Users, Scale, Palette, AlertCircle } from 'lucide-react';
 
 const Services = () => {
@@ -114,13 +114,13 @@ const Services = () => {
             >
               {/* Gradient background on hover */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-linear-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
               />
 
               <div className="relative z-10">
                 {/* Icon */}
                 <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 shadow-md`}
+                  className={`w-16 h-16 rounded-2xl bg-linear-to-br ${service.color} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300 shadow-md`}
                 >
                   <Icon className="w-7 h-7 text-white" />
                 </div>
@@ -138,7 +138,7 @@ const Services = () => {
                 {/* Decorative line */}
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div
-                    className={`w-0 h-1 bg-gradient-to-r ${service.color} group-hover:w-full transition-all duration-500`}
+                    className={`w-0 h-1 bg-linear-to-r ${service.color} group-hover:w-full transition-all duration-500`}
                   />
                 </div>
               </div>

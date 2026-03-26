@@ -62,7 +62,7 @@ const Specialties = () => {
   return (
     <section
       id="especialidades"
-      className="section-container bg-gradient-to-br from-primary-50 to-accent-50"
+      className="section-container bg-linear-to-br from-primary-50 to-accent-50"
     >
       <div className="text-center mb-16">
         <motion.div
@@ -101,7 +101,7 @@ const Specialties = () => {
               className={`${specialty.color} rounded-xl p-7 border-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 cursor-default shadow-sm hover:shadow-lg`}
             >
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <Icon className="w-8 h-8" />
                 </div>
                 <div>

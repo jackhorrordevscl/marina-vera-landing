@@ -36,7 +36,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonios"
-      className="section-container bg-gradient-to-br from-accent-50 to-primary-50"
+      className="section-container bg-linear-to-br from-accent-50 to-primary-50"
     >
       <div className="text-center mb-16">
         <motion.div
@@ -61,7 +61,7 @@ const Testimonials = () => {
       <div className="max-w-4xl mx-auto">
         <div className="relative">
           {/* Carousel Container */}
-          <div className="bg-white rounded-2xl shadow-xl p-10 md:p-14 min-h-[420px] flex flex-col justify-between border border-accent-50">
+          <div className="bg-white rounded-2xl shadow-xl p-10 md:p-14 min-h-105 flex flex-col justify-between border border-accent-50">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -82,7 +82,7 @@ const Testimonials = () => {
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-linear-to-br from-accent-400 to-accent-600 flex items-center justify-center text-white font-bold text-lg">
                     {testimonials[currentIndex].author.charAt(0)}
                   </div>
                   <div>

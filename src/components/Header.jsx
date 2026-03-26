@@ -132,6 +132,13 @@ const Header = () => {
                 >
                   Agendar Sesión
                 </a>
+                <a
+                  href="https://control-fichas.vercel.app/login"
+                  target="_blank"
+                  className="block mx-4 text-center btn-primary"
+                >
+                  Agendar Sesión
+                </a>
               </div>
             </motion.div>
           )}

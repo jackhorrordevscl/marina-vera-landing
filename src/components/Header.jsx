@@ -80,8 +80,6 @@ const Header = () => {
             </motion.a>
             <motion.a
               href="https://control-fichas.vercel.app/login"
-              target="_blank"
-              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}

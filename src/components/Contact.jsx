@@ -47,6 +47,8 @@ const Contact = () => {
     },
   ];
 
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER?.replace(/\D/g, '');
+  
   return (
     <section id="contacto" className="section-container bg-white">
       <div className="text-center mb-16">
@@ -160,7 +162,7 @@ const Contact = () => {
             ¿Prefieres una respuesta más rápida?
           </p>
           <a
-            href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=Hola,%20quisiera%20información%20sobre%20los%20servicios`}
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hola, quisiera información sobre los servicios")}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg"

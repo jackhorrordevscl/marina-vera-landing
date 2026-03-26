@@ -93,7 +93,7 @@ function App() {
 
         {/* WhatsApp Floating Button */}
         <a
-          href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}?text=Hola,%20quisiera%20información%20sobre%20los%20servicios`}
+          href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER}`}
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-40 group"

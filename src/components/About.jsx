@@ -110,8 +110,8 @@ const About = () => {
                   Compromiso Profesional
                 </h3>
                 <p className="text-gray-700 text-sm italic leading-relaxed">
-                  "Mi labor facilita procesos de salud mental basados en
-                  evidencia para promover el bienestar integral"
+                  &quot;Mi labor facilita procesos de salud mental basados en
+                  evidencia para promover el bienestar integral&quot;
                 </p>
               </div>
             </div>

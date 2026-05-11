@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Calendar, Mail, MessageSquare, MapPin, Clock } from "lucide-react";
+import { Calendar, MapPin, Clock } from "lucide-react";
 
 const Contact = () => {
   const googleForms = [
@@ -12,38 +12,20 @@ const Contact = () => {
       icon: Calendar,
       color: "from-blue-500 to-blue-600",
     },
-    {
-      title: "Consulta General",
-      description: "Envía tus dudas o consultas sobre los servicios",
-      url:
-        import.meta.env.VITE_FORM_CONSULTA ||
-        "https://docs.google.com/forms/d/e/1FAIpQLScilz-ybuMX2PUvhZB2sThEVbSmVEFUzCjUfr4lgMqcvs8X-g/viewform?pli=1",
-      icon: MessageSquare,
-      color: "from-green-500 to-green-600",
-    },
-    {
-      title: "Otro Formulario",
-      description: "Formulario adicional para casos específicos",
-      url:
-        import.meta.env.VITE_FORM_OTRO ||
-        "https://docs.google.com/forms/d/e/1FAIpQLScilz-ybuMX2PUvhZB2sThEVbSmVEFUzCjUfr4lgMqcvs8X-g/viewform?pli=1",
-      icon: Mail,
-      color: "from-purple-500 to-purple-600",
-    },
   ];
 
   const contactInfo = [
     {
       icon: MapPin,
       title: "Modalidad",
-      detail: "Teleconsulta y Atención Presencial",
-      subdetail: "Consultar disponibilidad por comuna",
+      detail: "Teleconsulta",
+      subdetail: "Consultar disponibilidad.",
     },
     {
       icon: Clock,
       title: "Horarios",
       detail: "Lunes a Viernes",
-      subdetail: "Horarios flexibles según disponibilidad",
+      subdetail: "Horarios flexibles según disponibilidad.",
     },
   ];
 
@@ -73,6 +55,8 @@ const Contact = () => {
       <div className="grid md:grid-cols-3 gap-6 mb-12">
         {googleForms.map((form, index) => {
           const Icon = form.icon;
+          const isSingleForm = googleForms.length === 1;
+
           return (
             <motion.a
               key={index}
@@ -84,14 +68,16 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative bg-white rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-accent-100 hover:border-accent-400 overflow-hidden"
+              className={`group relative bg-white rounded-xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 border-2 border-accent-100 hover:border-accent-400 overflow-hidden ${
+                isSingleForm ? "md:col-start-2" : ""
+              }`}
             >
               {/* Gradient background on hover */}
               <div
                 className={`absolute inset-0 bg-linear-to-br ${form.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
               />
 
-              <div className="relative z-10">
+              <div className="relative z-10 text-center flex flex-col items-center">
                 {/* Icon */}
                 <div
                   className={`w-14 h-14 rounded-xl bg-linear-to-br ${form.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
@@ -108,7 +94,7 @@ const Contact = () => {
                 <p className="text-gray-600 text-sm mb-4">{form.description}</p>
 
                 {/* CTA */}
-                <div className="flex items-center gap-2 text-accent-600 font-medium text-sm group-hover:gap-3 transition-all">
+                <div className="flex items-center justify-center gap-2 text-accent-600 font-medium text-sm group-hover:gap-3 transition-all">
                   <span>Completar formulario</span>
                   <span className="group-hover:translate-x-1 transition-transform">
                     →

@@ -74,17 +74,18 @@ const Header = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="btn-primary"
+              className="btn-primary !px-6 !py-2.5"
             >
               Agendar Sesión
             </motion.a>
             <motion.a
               href="https://control-fichas.vercel.app/login"
               target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
-              className="btn-primary"
+              className="btn-primary !px-6 !py-2.5"
             >
               Control Clínico
             </motion.a>
@@ -94,6 +95,8 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6 text-gray-700" />
@@ -106,6 +109,7 @@ const Header = () => {
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
+              id="mobile-menu"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
@@ -128,16 +132,17 @@ const Header = () => {
                 <a
                   href="#contacto"
                   onClick={(e) => handleScrollToSection(e, "#contacto")}
-                  className="block mx-4 text-center btn-primary"
+                  className="block mx-4 text-center btn-primary !px-6 !py-2.5"
                 >
                   Agendar Sesión
                 </a>
                 <a
                   href="https://control-fichas.vercel.app/login"
                   target="_blank"
-                  className="block mx-4 text-center btn-primary"
+                  rel="noopener noreferrer"
+                  className="block mx-4 text-center btn-primary !px-6 !py-2.5"
                 >
-                  Agendar Sesión
+                  Control Clínico
                 </a>
               </div>
             </motion.div>

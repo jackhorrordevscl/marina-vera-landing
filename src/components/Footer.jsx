@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import {
-  Instagram,
-  Music2,
   Mail,
   Phone,
   MapPin,

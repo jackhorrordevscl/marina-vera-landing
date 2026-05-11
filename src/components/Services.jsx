@@ -105,12 +105,16 @@ const Services = () => {
       >
         {services.map((service, index) => {
           const Icon = service.icon;
+          const isCenteredLastCard = services.length % 3 === 1 && index === services.length - 1;
+
           return (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ y: -4, transition: { duration: 0.3 } }}
-              className="group relative bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-accent-100 overflow-hidden"
+              className={`group relative bg-white rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-accent-100 overflow-hidden ${
+                isCenteredLastCard ? "lg:col-start-2" : ""
+              }`}
             >
               {/* Gradient background on hover */}
               <div

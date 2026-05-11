@@ -59,6 +59,8 @@ const Specialties = () => {
     },
   };
 
+  const hasTwoCenteredLastItems = specialties.length % 3 === 2;
+
   return (
     <section
       id="especialidades"
@@ -89,16 +91,21 @@ const Specialties = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 max-w-6xl mx-auto"
       >
         {specialties.map((specialty, index) => {
           const Icon = specialty.icon;
+          const isFirstCenteredLastItem =
+            hasTwoCenteredLastItems && index === specialties.length - 2;
+
           return (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
-              className={`${specialty.color} rounded-xl p-7 border-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 cursor-default shadow-sm hover:shadow-lg`}
+              className={`${specialty.color} rounded-xl p-7 border-2 backdrop-blur-sm bg-opacity-90 hover:bg-opacity-100 transition-all duration-300 cursor-default shadow-sm hover:shadow-lg lg:col-span-2 ${
+                isFirstCenteredLastItem ? "lg:col-start-2" : ""
+              }`}
             >
               <div className="flex items-start gap-4">
                 <div className="shrink-0">

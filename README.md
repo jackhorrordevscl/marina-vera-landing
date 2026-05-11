@@ -1,16 +1,63 @@
-# React + Vite
+# Marina Vera Guzmán Landing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page profesional para consulta psicológica, construida con React, Vite, Tailwind CSS y Framer Motion.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- Vite 8
+- Tailwind CSS 4
+- Framer Motion
+- react-helmet-async
+- ESLint 9
 
-## React Compiler
+## Scripts disponibles
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run dev`: inicia el servidor de desarrollo con Vite
+- `npm run build`: genera la build de producción
+- `npm run preview`: sirve localmente la build generada
+- `npm run lint`: ejecuta ESLint sobre el proyecto
 
-## Expanding the ESLint configuration
+## Variables de entorno
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+El proyecto usa variables Vite. Puedes partir copiando `.env.example` a tu archivo `.env` local.
+
+Variables activas en el código actual:
+
+- `VITE_SITE_URL`: URL pública base del sitio para canonical, Open Graph, Twitter Card y JSON-LD
+- `VITE_WHATSAPP_NUMBER`: número en formato internacional sin `+` para enlaces `wa.me`
+- `VITE_EMAIL`: correo de contacto mostrado en el sitio
+- `VITE_FORM_AGENDAR`: URL del formulario principal de agendamiento
+- `VITE_INSTAGRAM_URL`: enlace público del perfil de Instagram
+- `VITE_TIKTOK_URL`: enlace público del perfil de TikTok
+
+## Estructura general
+
+- `src/App.jsx`: compone la landing, define metadata SEO dinámica y JSON-LD
+- `src/components/Header.jsx`: navegación principal y CTAs del header
+- `src/components/Hero.jsx`: sección principal de apertura
+- `src/components/Services.jsx`: servicios clínicos
+- `src/components/Specialties.jsx`: especialidades y áreas de abordaje
+- `src/components/About.jsx`: perfil profesional e imagen de presentación
+- `src/components/Testimonials.jsx`: testimonios
+- `src/components/Contact.jsx`: formulario principal, modalidad y CTA de WhatsApp
+- `src/components/Footer.jsx`: contacto, redes y datos legales
+- `src/index.css`: tokens, utilidades y estilos compartidos del layout
+- `public/`: favicon, assets públicos y Open Graph image
+
+## Notas de mantenimiento
+
+- La metadata principal del sitio se gestiona en `src/App.jsx` con `react-helmet-async`.
+- `index.html` mantiene una base SEO mínima para no depender exclusivamente del render en cliente.
+- El espaciado general entre secciones se controla desde la clase compartida `.section-container` en `src/index.css`.
+- Los layouts especiales de cards centradas se resolvieron localmente en `Services.jsx`, `Specialties.jsx` y `Contact.jsx`.
+
+## Estado actual
+
+- `npm run lint`: en verde
+- `npm run build`: en verde
+
+## Próximo mantenimiento sugerido
+
+- Revisar periódicamente si cambian las variables activas del proyecto para mantener `.env.example` y este README alineados.
+- Si el objetivo SEO crece, evaluar prerender o SSR en lugar de depender principalmente de metadata inyectada en cliente.

@@ -30,8 +30,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        serif: ["Merriweather", "serif"],
+        sans: ["var(--font-body)"],
+        serif: ["var(--font-display)"],
       },
     },
   },

@@ -1,63 +1,72 @@
 # Marina Vera Guzmán Landing
 
-Landing page profesional para consulta psicológica, construida con React, Vite, Tailwind CSS y Framer Motion.
+Landing pública construida con React, Vite y Tailwind CSS. Su recorrido guía a
+las personas desde conocer el enfoque hasta solicitar una cita online o
+presencial; no incluye portal clínico, autenticación, pagos ni captura propia de
+datos.
 
-## Stack
+## Scripts
 
-- React 19
-- Vite 8
-- Tailwind CSS 4
-- Framer Motion
-- react-helmet-async
-- ESLint 9
+- `npm run dev`: inicia Vite en desarrollo.
+- `npm run build`: genera la build de producción.
+- `npm run preview`: sirve la build generada.
+- `npm run lint`: ejecuta ESLint.
+- `npm test`: ejecuta las pruebas deterministas de configuración y navegación.
 
-## Scripts disponibles
+## Configuración pública
 
-- `npm run dev`: inicia el servidor de desarrollo con Vite
-- `npm run build`: genera la build de producción
-- `npm run preview`: sirve localmente la build generada
-- `npm run lint`: ejecuta ESLint sobre el proyecto
+`src/config/publicSite.js` es la única fuente de datos públicos compartidos:
+nombre, rol, registro SIS, navegación y enlaces externos. El registro correcto
+es `829352`; no debe repetirse como texto literal en componentes.
 
-## Variables de entorno
+| Variable | Uso |
+| --- | --- |
+| `VITE_EMAIL` | Correo opcional mostrado en contacto. |
+| `VITE_INSTAGRAM_URL` | Perfil público de Instagram. |
+| `VITE_TIKTOK_URL` | Perfil público de TikTok. |
 
-El proyecto usa variables Vite. Puedes partir copiando `.env.example` a tu archivo `.env` local.
+## Antes de publicar
 
-Variables activas en el código actual:
+- Confirmar con la titular cualquier canal de solicitud y las condiciones de atención presencial antes de habilitarlo.
+- Revisar enlaces de redes y contacto en `publicSite.js`.
+- No añadir testimonios, precios, horarios, ubicación, condiciones legales,
+  privacidad o información de urgencias sin texto aprobado por la titular.
 
-- `VITE_SITE_URL`: URL pública base del sitio para canonical, Open Graph, Twitter Card y JSON-LD
-- `VITE_WHATSAPP_NUMBER`: número en formato internacional sin `+` para enlaces `wa.me`
-- `VITE_EMAIL`: correo de contacto mostrado en el sitio
-- `VITE_FORM_AGENDAR`: URL del formulario principal de agendamiento
-- `VITE_INSTAGRAM_URL`: enlace público del perfil de Instagram
-- `VITE_TIKTOK_URL`: enlace público del perfil de TikTok
+## Metadatos de despliegue pendientes
 
-## Estructura general
+El título, la descripción y `robots` están en `index.html` para que sigan
+disponibles sin JavaScript. Canonical, imágenes Open Graph, tarjetas sociales y
+datos estructurados permanecen fuera hasta contar con un dominio público, URL de
+imagen y datos de publicación confirmados. No se deben inferir esos valores.
 
-- `src/App.jsx`: compone la landing, define metadata SEO dinámica y JSON-LD
-- `src/components/Header.jsx`: navegación principal y CTAs del header
-- `src/components/Hero.jsx`: sección principal de apertura
-- `src/components/Services.jsx`: servicios clínicos
-- `src/components/Specialties.jsx`: especialidades y áreas de abordaje
-- `src/components/About.jsx`: perfil profesional e imagen de presentación
-- `src/components/Testimonials.jsx`: testimonios
-- `src/components/Contact.jsx`: formulario principal, modalidad y CTA de WhatsApp
-- `src/components/Footer.jsx`: contacto, redes y datos legales
-- `src/index.css`: tokens, utilidades y estilos compartidos del layout
-- `public/`: favicon, assets públicos y Open Graph image
+## Calidad
 
-## Notas de mantenimiento
+La automatización en `.github/workflows/quality.yml` ejecuta `npm run lint`,
+`npm test` y `npm run build`, y conserva el directorio `dist` como el artefacto
+`production-build` durante 14 días. Las pruebas cubren la ausencia de un canal
+de recolección para citas, los fragmentos de navegación y el foco al navegar
+desde el menú móvil.
 
-- La metadata principal del sitio se gestiona en `src/App.jsx` con `react-helmet-async`.
-- `index.html` mantiene una base SEO mínima para no depender exclusivamente del render en cliente.
-- El espaciado general entre secciones se controla desde la clase compartida `.section-container` en `src/index.css`.
-- Los layouts especiales de cards centradas se resolvieron localmente en `Services.jsx`, `Specialties.jsx` y `Contact.jsx`.
+## Recuperar una versión conocida como buena
 
-## Estado actual
+1. En GitHub Actions, identificar una ejecución verde de `Quality` y descargar
+   su artefacto `production-build` antes de su vencimiento.
+2. Extraerlo y reemplazar localmente el directorio `dist` por el contenido del
+   artefacto. Ejecutar `npm run preview -- --host 127.0.0.1 --port 4173` y
+   verificar la página, las modalidades online/presencial y que no exista un
+   canal de reserva confirmado.
+3. Publicar **únicamente ese `dist` validado** mediante el procedimiento de
+   despliegue vigente del entorno. No reconstruir desde otra revisión durante la
+   restauración.
+4. Confirmar la versión restaurada en el entorno público y registrar la
+   ejecución de CI/artefacto usada. Si no queda un artefacto válido, restaurar la
+   revisión conocida como buena, ejecutar las tres comprobaciones de calidad y
+   desplegar el nuevo `dist` resultante.
 
-- `npm run lint`: en verde
-- `npm run build`: en verde
+## Estructura
 
-## Próximo mantenimiento sugerido
-
-- Revisar periódicamente si cambian las variables activas del proyecto para mantener `.env.example` y este README alineados.
-- Si el objetivo SEO crece, evaluar prerender o SSR en lugar de depender principalmente de metadata inyectada en cliente.
+- `src/App.jsx`: composición de la página pública.
+- `src/config/publicSite.js`: configuración pública centralizada.
+- `src/components/CarePathway.jsx`: ruta de cuidado y selector de modalidad.
+- `src/index.css`: tokens, layout responsive, foco visible y reducción de movimiento.
+- `public/robots.txt` y `public/sitemap.xml`: base SEO estática sin dominio supuesto.

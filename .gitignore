@@ -25,5 +25,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.github/
+.github/*
+!.github/workflows/
+.github/workflows/*
+!.github/workflows/quality.yml
 .env
